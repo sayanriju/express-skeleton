@@ -31,3 +31,6 @@ build/Release
 
 # Yarn Integrity file
 .yarn-integrity
+
+*.kate-swp
+
