@@ -1,0 +1,35 @@
+{
+  "name": "express-skeleton",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "~2.4.1",
+    "express": "~4.13.4",
+    "express-mailer": "^0.3.1",
+    "express-session": "^1.14.1",
+    "helmet": "^3.4.0",
+    "jsonwebtoken": "^7.1.9",
+    "lodash": "^4.15.0",
+    "moment": "^2.14.1",
+    "mongoose": "^4.5.10",
+    "morgan": "~1.7.0",
+    "multer": "^1.2.0",
+    "randomstring": "^1.1.5",
+    "serve-favicon": "~2.3.0",
+    "shortid": "^2.2.6",
+    "tinyurl": "^1.1.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-notify": "^2.2.0"
+  }
+}
