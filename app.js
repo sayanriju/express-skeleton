@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var mailer = require('express-mailer');
+// var helmet = require('helmet');
 
 var config = require('./config')[process.env.NODE_ENV || 'development'];
 
