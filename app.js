@@ -10,10 +10,13 @@ var mailer = require('express-mailer');
 
 var config = require('./config')[process.env.NODE_ENV || 'development'];
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var routes = require('./routes/web/index');
+// var users = require('./routes/users');
 
 var app = express();
+
+// For Prod usage (SECURITY)
+// app.use(helmet())
 
 mailer.extend(app, {
   from: config.email.from,
@@ -27,7 +30,7 @@ mailer.extend(app, {
   }
 });
 
-
+mongoose.Promise = global.Promise;
 mongoose.connect(config.database);
 
 
@@ -45,11 +48,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: config.secret,
   resave: false,
-  cookie: { secure: false }
+  cookie: { secure: false },
+  saveUninitialized: true
 }));
 
 app.use('/', routes);
-app.use('/users', users);
+// app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
