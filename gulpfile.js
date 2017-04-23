@@ -1,7 +1,7 @@
 // Dependencies
 const gulp = require("gulp")
 const nodemon = require("gulp-nodemon")
-// const notify = require("gulp-notify")
+const notify = require("gulp-notify")
 const livereload = require("gulp-livereload")
 const eslint = require("gulp-eslint")
 
@@ -25,27 +25,27 @@ gulp.task("lint", () => {
 })
 
 gulp.task("server", () => {
-  // listen for changes
   livereload.listen()
-  // configure nodemon
   nodemon({
-  // the script to run the app
-  // exec: 'node-inspector & node --debug',
-  // nodeArgs: ['--debug'],
     script: "bin/www",
+    // exec: 'node-inspector & node --debug',
+    // nodeArgs: ['--debug'],
     ext: "js ejs json css html",
-    ignore: ["public/*"],
-  }).on("restart", () => {
-  // when the app has restarted, run livereload.
-    gulp.src("*.*")
-    .pipe(livereload({ start: true }))
-    // .pipe(notify('Restarted Server & Reloading page...'));
+    ignore: "public/*"
+  })
+  .on("restart", () => {
+    gulp.src("bin/www")
+    .pipe(notify({ title: "Nodemon", message: "Restarting due to changes...." }))
+  })
+  .on("crash", () => {
+    gulp.src("bin/www")
+    .pipe(notify({ title: "App Crashed!!", message: "[nodemon] app crashed - waiting for file changes before starting..." }))
   })
 })
 
 gulp.task("client", () => {
   gulp.src("public/**/*.{js,css,html}")
-    .pipe(livereload({ start: true }))
+    .pipe(livereload())
 })
 
 gulp.task("watch", () => {
@@ -53,4 +53,4 @@ gulp.task("watch", () => {
   gulp.watch("public/**/*.{js,css,html}", ["client"])
 })
 
-gulp.task("default", ["watch", "server"])
+gulp.task("default", ["server", "watch"])
