@@ -6,12 +6,13 @@
   },
   "extends": "airbnb-base",
   "rules": {
+    "comma-dangle": ["error", "only-multiline"],
     "func-names": ["warn", "never"],
     "semi": ["warn", "never"],
     "quotes": ["warn", "double"],
-    "import/newline-after-import": 1,
     "import/no-unresolved": 1,
     "no-console": 1,
-    "no-unused-vars": 1
+    "no-unused-vars": 1,
+    "import/newline-after-import": 0
   }
 }
