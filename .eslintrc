@@ -1,0 +1,17 @@
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "mocha": true
+  },
+  "extends": "airbnb-base",
+  "rules": {
+    "func-names": ["warn", "never"],
+    "semi": ["warn", "never"],
+    "quotes": ["warn", "double"],
+    "import/newline-after-import": 1,
+    "import/no-unresolved": 1,
+    "no-console": 1,
+    "no-unused-vars": 1
+  }
+}
