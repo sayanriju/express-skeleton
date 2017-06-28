@@ -14,6 +14,14 @@
     "import/no-unresolved": 1,
     "no-console": 1,
     "no-unused-vars": 1,
+    "max-len": ["warn", {
+      "ignoreComments": true,
+      "ignoreTrailingComments": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true,
+      "ignoreRegExpLiterals": true,
+      "ignorePattern": true
+    }],
     "import/newline-after-import": 0,
     "no-underscore-dangle": 0
   }
