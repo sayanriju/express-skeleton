@@ -32,7 +32,7 @@ mailer.extend(app, {
 })
 
 mongoose.Promise = global.Promise
-mongoose.connect(config.database)
+mongoose.connect(config.database, { useMongoClient: true })
 
 
 // view engine setup
