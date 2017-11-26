@@ -63,28 +63,15 @@ app.use((req, res, next) => {
   next(err)
 })
 
-// error handlers
+// error handler
+app.use((err, req, res, next) => {
+  // set locals, only providing error in development
+  res.locals.message = err.message
+  res.locals.error = req.app.get("env") === "development" ? err : {}
 
-// development error handler
-// will print stacktrace
-if (app.get("env") === "development") {
-  app.use((err, req, res) => {
-    res.status(err.status || 500)
-    res.render("error", {
-      message: err.message,
-      error: err
-    })
-  })
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use((err, req, res) => {
+  // render the error page
   res.status(err.status || 500)
-  res.render("error", {
-    message: err.message,
-    error: {}
-  })
+  res.render("error")
 })
 
 
