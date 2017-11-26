@@ -64,12 +64,12 @@ app.use((req, res, next) => {
 })
 
 // log errors in development
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   if (req.app.get("env") === "development") console.error(err.stack)
   next(err)
 })
 
-// error handler
+// main error handler
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message
