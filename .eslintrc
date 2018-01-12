@@ -11,12 +11,14 @@
     "semi": ["warn", "never"],
     "quotes": ["warn", "double"],
     "max-len": [ "warn", { "ignoreComments": true, "ignoreTrailingComments": true, "ignoreUrls": true, "ignoreStrings": true, "ignoreTemplateLiterals": true, "ignoreRegExpLiterals": true } ],
+    "no-param-reassign": ["error", { "props": false }],
     "no-console": 1,
     "no-unused-vars": 1,
     "prefer-const": 1,
     "no-var": 1,
     "eol-last": 1,
     "padded-blocks": 1,
+    "import/no-unresolved": 1,
     "import/newline-after-import": 0,
     "no-underscore-dangle": 0
   }
