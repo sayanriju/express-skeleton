@@ -33,14 +33,14 @@ gulp.task("server", () => {
     ext: "js ejs json css html",
     ignore: "public/*"
   })
-  .on("restart", () => {
-    gulp.src("bin/www")
-    .pipe(notify({ title: "Nodemon", message: "Restarting due to changes...." }))
-  })
-  .on("crash", () => {
-    gulp.src("bin/www")
-    .pipe(notify({ title: "App Crashed!!", message: "[nodemon] app crashed - waiting for file changes before starting..." }))
-  })
+    .on("restart", () => {
+      gulp.src("bin/www")
+        .pipe(notify({ title: "Nodemon", message: "Restarting due to changes...." }))
+    })
+    .on("crash", () => {
+      gulp.src("bin/www")
+        .pipe(notify({ title: "App Crashed!!", message: "[nodemon] app crashed - waiting for file changes before starting..." }))
+    })
 })
 
 gulp.task("client", () => {
