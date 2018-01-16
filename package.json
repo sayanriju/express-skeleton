@@ -17,6 +17,7 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
+    "cuid": "^2.0.2",
     "debug": "^2.6.9",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
@@ -31,7 +32,6 @@
     "multer": "^1.2.0",
     "randomstring": "^1.1.5",
     "serve-favicon": "^2.4.5",
-    "shortid": "^2.2.6",
     "tinyurl": "^1.1.2"
   },
   "devDependencies": {
@@ -45,5 +45,8 @@
     "gulp-notify": "^2.2.0",
     "husky": "^0.14.3"
   },
-  "eslintIgnore": ["public/", "bin/"]
+  "eslintIgnore": [
+    "public/",
+    "bin/"
+  ]
 }
