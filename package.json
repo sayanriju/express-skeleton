@@ -1,7 +1,10 @@
 {
   "name": "express-skeleton",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "A starter template for Express JS apps, with sane defaults (uses EJS, Mongoose, Gulp, Eslint, etc) ",
+  "main": "bin/www",
+  "author": "Sayan \"Riju\" Chakrabarti <s26c.sayan@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "start": "node ./bin/www",
     "lint": "npm run lint:quiet",
