@@ -8,9 +8,9 @@
   "scripts": {
     "start": "node ./bin/www",
     "lint": "npm run lint:quiet",
-    "lint:quiet": "eslint --quiet ./**/*.js",
-    "lint:all": "eslint ./**/*.js",
-    "lint:fix": "eslint ./**/*.js --quiet --fix",
+    "lint:quiet": "eslint --quiet './**/*.js'",
+    "lint:all": "eslint './**/*.js'",
+    "lint:fix": "eslint './**/*.js' --quiet --fix",
     "prepush": "npm run lint:quiet"
   },
   "dependencies": {
