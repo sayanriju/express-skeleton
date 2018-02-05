@@ -8,6 +8,7 @@ const mongoose = require("mongoose")
 const session = require("express-session")
 const mailer = require("express-mailer")
 // const helmet = require('helmet');
+// const cors = require("cors")
 
 const config = require("./config")[process.env.NODE_ENV || "development"]
 
@@ -20,6 +21,7 @@ const io = require("socket.io")(server)
 
 // For Prod usage (SECURITY)
 // app.use(helmet())
+// app.use(cors())
 
 mailer.extend(app, {
   from: config.email.from,
