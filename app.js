@@ -15,6 +15,8 @@ const routes = require("./routes/web/index")
 // const users = require('./routes/users');
 
 const app = express()
+const server = require("http").Server(app)
+const io = require("socket.io")(server)
 
 // For Prod usage (SECURITY)
 // app.use(helmet())
@@ -54,6 +56,10 @@ app.use(session({
   cookie: { secure: false },
   saveUninitialized: true
 }))
+app.use((req, res, next) => {
+  res.io = io
+  next()
+})
 
 app.use("/", routes)
 // app.use('/users', users);
@@ -83,4 +89,4 @@ app.use((err, req, res, next) => {
 })
 
 
-module.exports = app
+module.exports = { app, server }

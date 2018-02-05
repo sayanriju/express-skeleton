@@ -3,9 +3,16 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/socket.io/socket.io.js"></script>
   </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <script>
+    var socket = io()
+    socket.on('socketToMe', function(msg){
+      console.log(msg)
+    })
+    </script>
   </body>
 </html>
