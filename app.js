@@ -6,7 +6,6 @@ const cookieParser = require("cookie-parser")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const session = require("express-session")
-const mailer = require("express-mailer")
 // const helmet = require('helmet');
 // const cors = require("cors")
 
@@ -20,18 +19,6 @@ const app = express()
 // For Prod usage (SECURITY)
 // app.use(helmet())
 // app.use(cors())
-
-mailer.extend(app, {
-  from: config.email.from,
-  host: config.email.host, // hostname
-  secureConnection: true, // use SSL
-  port: config.email.port, // port for secure SMTP
-  transportMethod: "SMTP", // default is SMTP. Accepts anything that nodemailer accepts
-  auth: {
-    user: config.email.auth.user,
-    pass: config.email.auth.pass
-  }
-})
 
 mongoose.Promise = global.Promise
 mongoose.connect(config.database, { useMongoClient: true })
