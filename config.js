@@ -9,7 +9,7 @@ module.exports = {
       port: 465,
       auth: {
         user: "s26c.sayan@gmail.com",
-        pass: "Gne7SFoGLJ75B"
+        pass: "topsecret"
       }
     }
   }
