@@ -71,7 +71,7 @@ UserSchema.methods.comparePassword = function (pw, cb) {
 
 UserSchema.virtual("name.full").get(function () {
   const last = (this.name.last === undefined || this.name.last === null) ? "" : this.name.last
-  return `${this.name.first}  ${last}`
+  return `${this.name.first} ${last}`
 })
 
 UserSchema.set("toJSON", { virtuals: true })
